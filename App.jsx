@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-import HomeScreen from './Components/pages/home/home';
+import HomeScreen from './Components/pages/home/home.jsx';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import useFonts from './assets/fonts/fonts';
 import AppLoading from 'expo-app-loading';
 import Confidence from './Components/pages/Confidence/conf';
 import Oferta from './Components/pages/Oferta/oferta';
-import chooseZal from './Components/pages/chooseZal/chooseZal';
+import Menu from './Components/pages/chooseZal/chooseZal.jsx';
 import Category from './Components/Category/Category';
 
 const Stack = createNativeStackNavigator();
@@ -51,7 +51,7 @@ const App = () => {
         />
         <Stack.Screen
           name='chooseZal'
-          component={chooseZal}
+          component={Menu}
           options={{
             headerShown: false
           }}
