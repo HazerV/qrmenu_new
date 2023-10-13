@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Text} from 'react-native';
 import PlusSvg from '../GoodsItem/Plus.svg'
+import MinusSvg from '../GoodsItem/Minus.svg'
 
 const Counter = () => {
     return (
@@ -12,15 +13,29 @@ const Counter = () => {
             marginTop: 12,
             height: 40,
             marginBottom: 16,
-            flexShrink: 0 
+            flexShrink: 1,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            padding: 8
             }}>
                 
-                <View style={{
-                    width: 34,
-                    height: 40,
-                    alignSelf: 'flex-end',
-                    justifyContent: 'center'
+
+                <View>
+                    <MinusSvg />
+                </View>
+
+                <Text style = {{
+                    color: 'white',
+                    fontFamily: 'Gilroy-Regular',
+                    fontSize: 16,
+                    fontWeight: 400,
+                    alignSelf: 'center'
                 }}>
+                    423 руб
+                </Text>
+
+                <View>
                     <PlusSvg />
                 </View>
         </View>

@@ -13,7 +13,11 @@ const GoodsItem = ({ name, imagePath }) => {
                 justifyContent: 'space-between',
                 flexDirection: 'row',
             }}>
-                <View>
+                <View style={{
+                    display:'flex',
+                    flexDirection:'column',
+                    justifyContent:'space-between'
+                }}>
                     <Text style={{
                         fontFamily: 'Gilroy-Regular',
                         fontSize: 14,
