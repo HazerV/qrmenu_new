@@ -6,7 +6,8 @@ export const homeStyles = {
         display: "flex",
         flex: 1,
         width: '100%',
-        height: '100%'
+        height: '100%',
+        paddingBottom: 100
     },
     head: {
         alignSelf: 'center',
@@ -67,7 +68,7 @@ export const homeStyles = {
         display: 'flex', 
         flexDirection: 'row', 
         columnGap: 8, 
-        justifyContent: 'flex-start',
+        // justifyContent: 'flex-start',
         marginLeft: 16
     },
     oferta: {

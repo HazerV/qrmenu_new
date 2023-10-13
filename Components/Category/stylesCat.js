@@ -2,8 +2,8 @@ export const stylesCat = {
     container: {
         backgroundColor: "black",
         minHeight: 100,
-        display: "flex",
-        flex: 1,
+        display: 'flex',
+        alignItems: 'center',
         width: '100%',
         height: '100%'
     },

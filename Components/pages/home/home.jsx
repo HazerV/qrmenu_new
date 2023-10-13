@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, Context} from 'react';
 import {View, Image, StyleSheet, Text, StatusBar, ScrollView, SafeAreaView, Button, TouchableOpacity} from 'react-native';
 import TrueShopSvg from '../img/TrueShop.svg'
 import SunSvg from '../img/icons/Sun.svg'
@@ -9,6 +9,8 @@ import SearchSvg from '../img/icons/Search.svg'
 import Desert from '../img/Desert.png'
 import Brusket from '../img/Bruskett.png'
 import TrueShop from '../img/TrueShop.png'
+import GoodsItem from '../GoodsItem/GoodsItem';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -26,10 +28,10 @@ const styles = StyleSheet.create({
 const HomeScreen = ({navigation}) => {
 
   return (
-  
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
-      <StatusBar backgroundColor='black' animated={true} />
+      <View style={{flex: 1}}>
+        <ScrollView style={styles.scrollView}>
+        <StatusBar backgroundColor='black' animated={true} />
         <View style={homeStyles.container}>
           <View>
               <View style={homeStyles.head}>  
@@ -81,25 +83,27 @@ const HomeScreen = ({navigation}) => {
             }}
             source={TrueShop} />
 
-            <View style={[homeStyles.icons]}>
-              <View>
-                <TouchableOpacity style={{ }} onPress={() => { navigation.navigate('chooseZal')}}>
-                  <HomeSvg/>
-                </TouchableOpacity>
-              </View>
-              <View>
-                <SearchSvg/>
-              </View>
-              <View>
-                  <SunSvg/>
-              </View>
-            </View>
+        
           </View>          
         </ScrollView>
-      </SafeAreaView>
-    );
+        <View style={[homeStyles.icons, {position: 'absolute', left: 0, right: 0, bottom: 0}]}>
+          <View>
+            <TouchableOpacity style={{ }} onPress={() => { navigation.navigate('chooseZal')}}>
+              <HomeSvg/>
+            </TouchableOpacity>
+          </View>
+          <View>
+            <SearchSvg/>
+          </View>
+          <View>
+              <SunSvg/>
+          </View>
+        </View>
+      </View>
+    </SafeAreaView>
+  );
 
-  };
+};
 
 
 export default HomeScreen;

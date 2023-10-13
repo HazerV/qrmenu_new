@@ -4,7 +4,7 @@ import Cat1 from '../../Components/pages/img/Cat1.png'
 import Cat2 from '../../Components/pages/img/Cat2.png'
 import { stylesCat } from './stylesCat'
 import Product from '../../Components/pages/img/Product.png'
-
+import GoodsItem from '../pages/GoodsItem/GoodsItem'
 
 export default class Category extends Component {
  render() {
@@ -30,13 +30,23 @@ export default class Category extends Component {
                 marginStart: "5%",
                 marginEnd: '10%',
                 justifyContent: 'center',
-        }}>
-            <Image source={Product}/>            
-            <Image source={Product}/>
-            <Image source={Product}/>
-            <Image source={Product}/>
-            <Image source={Product}/>
+        }}>            
         </View>
+        <View style={{
+            width: '90%',
+            margin: '0 auto',
+        }}>
+            <GoodsItem name={"Салат из телятины, зелёной редьки и жареного лука («Ташкент»)"} imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
+            <GoodsItem/>
+            <GoodsItem/>
+            <GoodsItem/>
+
+        </View>
+        
+        {/* <View style={{
+        }}>
+            
+        </View> */}
     </View>
  )
  }
