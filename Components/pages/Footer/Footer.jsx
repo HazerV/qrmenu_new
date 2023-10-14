@@ -1,20 +1,18 @@
 import React from "react";
 import { View, SafeAreaView, ScrollView, Text, StatusBar, TouchableOpacity } from "react-native";
 import HomeSvg from '../../pages/img/icons/Home.svg'
-import SearchSvg from '../../pages/img/icons/Home.svg'
-import SunSvg from '../../pages/img/icons/Home.svg'
+import SearchSvg from '../../pages/img/icons/Search.svg'
+import SunSvg from '../../pages/img/icons/Sun.svg'
 
-const Footer = () => {
+const Footer = ({navigation}) => {
     return (
             <SafeAreaView style = {styles.AreaView}>
-                <View style={{
-                    flex: 1
-                }}>
+                <View style={{ flex: 1 }}>
                     <ScrollView style={styles.ScrollView}>
                         <View style = {styles.container}>
-                            <View style={[styles.icons, ]}>
+                            <View style={styles.icons}>
                                 <View>
-                                    <TouchableOpacity style={{ }} onPress={() => { navigation.navigate('chooseZal')}}>
+                                    <TouchableOpacity onPress={() => { navigation.navigate('chooseZal')}}>
                                         <HomeSvg/>
                                     </TouchableOpacity>
                                 </View>
@@ -34,7 +32,6 @@ const Footer = () => {
 
 const styles = {
     container: {
-        // backgroundColor: "black",
         minHeight: 100,
         display: "flex",
         flex: 1,
@@ -48,7 +45,6 @@ const styles = {
         minHeight: 100
     },
     ScrollView: {
-        // backgroundColor: "black",
         minHeight: 100,
     },
     icons: {
