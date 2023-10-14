@@ -9,11 +9,7 @@ const Counter = () => {
     const num = 450
 
     const [count, setCount] = useState(0)
-
-    
-    // const amount = 1
-
-    
+        
     return (
         <View style={styles.container}>
              <View style={styles.mainPM}>
@@ -25,8 +21,6 @@ const Counter = () => {
                             <MinusSvg />
                         </View>
                     </TouchableOpacity>
-
-                    {/* <Text>{num}</Text> */}
 
                      <Text style = {styles.text}>
                          {count ? num * count : num} 

@@ -10,6 +10,7 @@ import Desert from '../img/Desert.png'
 import Brusket from '../img/Bruskett.png'
 import TrueShop from '../img/TrueShop.png'
 import GoodsItem from '../GoodsItem/GoodsItem';
+import Footer from '../Footer/Footer';
 
 
 const styles = StyleSheet.create({
@@ -82,23 +83,16 @@ const HomeScreen = ({navigation}) => {
               alignSelf: 'center',
             }}
             source={TrueShop} />
+          <View style={{
+            flex: 1
+          }}>
+            <View style={{position: 'absolute', left: 0, right: 0, bottom: 0}}>
+              <Footer/>
+            </View>
+          </View>
+          </View>    
 
-        
-          </View>          
         </ScrollView>
-        <View style={[homeStyles.icons, {position: 'absolute', left: 0, right: 0, bottom: 0}]}>
-          <View>
-            <TouchableOpacity style={{ }} onPress={() => { navigation.navigate('chooseZal')}}>
-              <HomeSvg/>
-            </TouchableOpacity>
-          </View>
-          <View>
-            <SearchSvg/>
-          </View>
-          <View>
-              <SunSvg/>
-          </View>
-        </View>
       </View>
     </SafeAreaView>
   );
