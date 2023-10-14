@@ -7,7 +7,10 @@ const GoodsItem = ({ name, imagePath }) => {
 
     return ( 
 
-        <View style={styleGoods.container}>
+        <View style={[styleGoods.container, {
+            borderColor: 'gray',
+            borderWidth: 2
+        }]}>
             <View style={{
                 display: 'flex',
                 justifyContent: 'space-between',
@@ -26,7 +29,8 @@ const GoodsItem = ({ name, imagePath }) => {
                         maxWidth: 230,
                         marginLeft: 16,
                         marginTop: 16,
-                        marginRight: 16
+                        marginRight: 16,
+                        
                     }}>
                         {name}
                     </Text>

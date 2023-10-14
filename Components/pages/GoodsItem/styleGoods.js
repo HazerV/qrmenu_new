@@ -4,7 +4,10 @@ const styleGoods = {
         backgroundColor: '#222',
         borderRadius: 16,
         minHeight: 144,
-        marginBottom: 16
+        marginBottom: 16,
+        borderColor: '#FF7A00',
+        // borderBottomColor: 
+        // borderWidth: 100
     },
     button: {
         
