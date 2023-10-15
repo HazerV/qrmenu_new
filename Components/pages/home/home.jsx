@@ -1,12 +1,14 @@
 import React, {useEffect, useState, Context} from 'react';
-import {View, Image, StyleSheet, Text, StatusBar, ScrollView, SafeAreaView, Button, TouchableOpacity} from 'react-native';
+import {View, Image, StyleSheet, Text, StatusBar, ScrollView, SafeAreaView, useColorScheme, TouchableOpacity} from 'react-native';
 import { homeStyles } from './homeStyle';
 import Header from '../img/Header.png'
 import Brusket from '../img/Bruskett.png'
 import Desert from '../img/Desert.png'
 import TrueShopSvg from '../img/TrueShop.svg'
 import Footer from '../Footer/Footer';
-
+import ThemeSwitcher from '../../Theme/ThemeSwitcher';
+import ThemedButton from '../Theme/themed-button';
+import Switcher from '../Theme/themeSw';
 
 const styles = StyleSheet.create({
   container: {
@@ -20,8 +22,9 @@ const styles = StyleSheet.create({
   }
 })
 
-
 const HomeScreen = ({navigation}) => {
+
+  
 
   return (
     <SafeAreaView style={styles.container}>
@@ -74,9 +77,7 @@ const HomeScreen = ({navigation}) => {
                   <View style={{alignSelf: 'center'}}>
                     <TrueShopSvg/>
                   </View>
-                  <View style={{
-                      // flex: 1
-                      }}>
+                  <View>
                       <View>
                         <Footer/>
                     </View>
@@ -86,7 +87,6 @@ const HomeScreen = ({navigation}) => {
         </View>
     </SafeAreaView>
   );
-
 };
 
 
