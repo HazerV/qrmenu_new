@@ -8,14 +8,13 @@ export const stylesCat = {
         height: '100%'
     },
     salats: {
-        textAlign: 'left',
         color: 'white',
-        justifyContent: 'space-between',
         fontSize: 24,
         fontFamily: "Gilroy-SemiBold",
-        marginBottom: 25,
-        marginLeft: 16,
-        marginTop: 48 
+        marginLeft: 10,
+        marginTop: 48, 
+        marginLeft: 26,
+        marginRight: 15
     },
     buttons: {
         justifyContent: 'space-between',
@@ -27,5 +26,6 @@ export const stylesCat = {
         width: '90%',
         marginStart: "5%",
         marginEnd: '10%',
-    }
+    },
+
 }

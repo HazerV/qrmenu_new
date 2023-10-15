@@ -16,13 +16,14 @@ export default class Category extends Component {
             backgroundColor: 'black',
             minHeight: 100
         }}>
+            <View style={{
+                    alignItems: 'flex-start'
+                }}>
+                    <Text style={[stylesCat.salats]}>
+                        Салаты
+                    </Text>
+            </View>
             <View style = {stylesCat.container}>
-                        <View>
-                            <Text style={stylesCat.salats}>
-                                Салаты
-                            </Text>
-                        </View>
-
                         <View style = {{
                                 justifyContent: 'space-between',
                                 flexDirection: 'column',

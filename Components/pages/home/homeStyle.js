@@ -29,8 +29,8 @@ export const homeStyles = {
         columnGap: 16,
         flexDirection: 'row',
         marginBottom: 16,
-        marginLeft: 10,
-        marginRight: 15,
+        marginLeft: 16,
+        marginRight: 16,
         width: '90%',
         marginStart: "5%",
         marginEnd: '10%',
@@ -62,7 +62,8 @@ export const homeStyles = {
         alignSelf: 'center',
         marginLeft: 10,
         marginRight: 15,
-        marginBottom: 52
+        marginBottom: 52,
+        width: '90%'
     },
     icons: {
         display: 'flex', 
@@ -72,6 +73,6 @@ export const homeStyles = {
         marginLeft: 16
     },
     oferta: {
-        color: '#BBBBBB', textDecorationLine: 'underline', height: 22, fontFamily: 'Gilroy-Regular'
+        color: '#BBBBBB', textDecorationLine: 'underline', height: 22, fontFamily: 'Gilroy-Regular', marginBottom: 8
     }
 }

@@ -3,28 +3,30 @@ import { View, SafeAreaView, ScrollView, Text, StatusBar, TouchableOpacity } fro
 import HomeSvg from '../../pages/img/icons/Home.svg'
 import SearchSvg from '../../pages/img/icons/Search.svg'
 import SunSvg from '../../pages/img/icons/Sun.svg'
+import { useNavigation } from "@react-navigation/native";
 
-const Footer = ({navigation}) => {
+const Footer = () => {
+    const navigation = useNavigation()
     return (
             <SafeAreaView style = {styles.AreaView}>
                 <View style={{ flex: 1 }}>
-                    <ScrollView style={styles.ScrollView}>
-                        <View style = {styles.container}>
-                            <View style={styles.icons}>
-                                <View>
-                                    <TouchableOpacity onPress={() => { navigation.navigate('chooseZal')}}>
-                                        <HomeSvg/>
-                                    </TouchableOpacity>
-                                </View>
-                                <View>
-                                    <SearchSvg/>
-                                </View>
-                                <View>
-                                    <SunSvg/>
+                        <ScrollView style={styles.ScrollView}>
+                            <View style = {styles.container}>
+                                <View style={styles.icons}>
+                                    <View>
+                                        <TouchableOpacity onPress={() => { navigation.navigate('chooseZal')}}>
+                                            <HomeSvg/> 
+                                        </TouchableOpacity>
+                                    </View>
+                                    <View>
+                                        <SearchSvg/>
+                                    </View>
+                                    <View>
+                                        <SunSvg/>
+                                    </View>
                                 </View>
                             </View>
-                        </View>
-                    </ScrollView>
+                        </ScrollView>
                 </View>
             </SafeAreaView>    
     )

@@ -1,4 +1,4 @@
-import { Text, View, Image } from 'react-native'
+import { Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import styleGoods from './styleGoods'
 import Counter from './Counter'
@@ -8,8 +8,6 @@ const GoodsItem = ({ name, imagePath }) => {
     return ( 
 
         <View style={[styleGoods.container, {
-            borderColor: 'gray',
-            borderWidth: 2
         }]}>
             <View style={{
                 display: 'flex',
@@ -21,27 +19,13 @@ const GoodsItem = ({ name, imagePath }) => {
                     flexDirection:'column',
                     justifyContent:'space-between'
                 }}>
-                    <Text style={{
-                        fontFamily: 'Gilroy-Regular',
-                        fontSize: 14,
-                        color: 'white',
-                        maxHeight: 400,
-                        maxWidth: 230,
-                        marginLeft: 16,
-                        marginTop: 16,
-                        marginRight: 16,
-                        
-                    }}>
-                        {name}
-                    </Text>
-
+                    <TouchableOpacity/>
+                        <Text style={styleGoods.text}>
+                            {name}
+                        </Text>
+                    <TouchableOpacity/>
                     <Counter/>
-
-                    
-                    {/* Counter here!!! */}
-
                 </View>
-                
                 <Image 
                     style={{  
                         width: 144,

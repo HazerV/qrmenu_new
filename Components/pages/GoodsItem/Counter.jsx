@@ -13,19 +13,15 @@ const Counter = () => {
     return (
         <View style={styles.container}>
              <View style={styles.mainPM}>
-                     
                     <TouchableOpacity onPress={() => {if (count != 0)
-                        
                         setCount(count-1)}}>
                         <View>
                             <MinusSvg />
                         </View>
                     </TouchableOpacity>
-
                      <Text style = {styles.text}>
                          {count ? num * count : num} 
                      </Text>
-
                     <TouchableOpacity onPress={() => setCount(count+1)}>
                          <View>
                              <PlusSvg />
@@ -40,7 +36,6 @@ const Counter = () => {
                     </View>
                 : <></>
             }
-             
         </View>
     );
 }
