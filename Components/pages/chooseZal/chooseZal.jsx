@@ -2,10 +2,9 @@ import React from "react";
 import { View, Text, Image, StatusBar, ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 import VidSvg from '../chooseZal/Vid.svg'
 import ChinaTownSvg from '../chooseZal/ChinaTown.svg'
-import Header from '../img/HeaderBlack.png'
 import { SafeAreaView } from "react-native-safe-area-context";
 import { styleZal } from "./styleZal";
-
+import Header from "../../Header/Header";
 
 const ChooseZal = ({navigation}) => {
 
@@ -19,7 +18,8 @@ return (
                 minHeight: 100,
                 backgroundColor: 'black'
             }}>
-                <Image style={styleZal.header} source={Header} />
+                {/* <Image style={styleZal.header} source={Header} /> */}
+                <Header />
                 <Text style={styleZal.chooseText}>
                     Выберите зал
                 </Text>

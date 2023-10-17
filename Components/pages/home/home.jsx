@@ -69,7 +69,7 @@ const HomeScreen = ({navigation}) => {
       textDecorationLine: 'underline', 
       height: 22, 
       fontFamily: 'Gilroy-Regular', 
-      marginBottom: 8}
+      marginBottom: 6}
   })
 
 
@@ -123,13 +123,14 @@ const HomeScreen = ({navigation}) => {
                   <View style={{alignSelf: 'center'}}>
                     <TrueShop />
                   </View>
-                  <View>
-                      <View>
-                        <Footer/>
-                    </View>
-                  </View>
+                  
+
+                  
               </View>    
           </ScrollView>
+              <View>
+                    <Footer/>
+              </View>
         </View>
     </SafeAreaView>
   );
