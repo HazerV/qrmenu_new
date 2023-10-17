@@ -1,13 +1,16 @@
 import React, {useEffect, useState, useContext} from 'react';
 import {View, Image, StyleSheet, Text, StatusBar, ScrollView, SafeAreaView, useColorScheme, TouchableOpacity, Button} from 'react-native';
-import { homeStyles } from './homeStyle';
-import Header from '../img/Header.png'
+import { homeStyles, stylez } from './homeStyle';
+import HeaderBlack from '../img/HeaderBlack.png'
 import Brusket from '../img/Bruskett.png'
 import Desert from '../img/Desert.png'
 import TrueShopSvg from '../img/TrueShop.svg'
 import Footer from '../Footer/Footer';
 import { ThemeContext } from '../../Theme/ThemeSwitcher';
 import { lightTheme } from './lightTheme';
+import TrueLight from '../img/TrueLight.svg'
+import Header from '../../Header/Header';
+import TrueShop from '../../TrueShop';
 
 const styles = StyleSheet.create({
   container: {
@@ -25,7 +28,7 @@ const HomeScreen = ({navigation}) => {
 
   const {theme, setTheme} = useContext(ThemeContext)
   console.log(theme)
-  
+
   const stylez = StyleSheet.create({
     container: {
       flex: 1,
@@ -60,10 +63,14 @@ const HomeScreen = ({navigation}) => {
       fontFamily: "Gilroy-Regular",
       marginBottom: 25,
       marginLeft:16 
-    }
+    },
+    oferta: {
+      color: theme == 'light' ? 'black' : 'white', 
+      textDecorationLine: 'underline', 
+      height: 22, 
+      fontFamily: 'Gilroy-Regular', 
+      marginBottom: 8}
   })
-
-
 
 
 
@@ -74,9 +81,7 @@ const HomeScreen = ({navigation}) => {
             <StatusBar backgroundColor='black' animated={true} />
               <View style={stylez.container}>
                   <View>
-                      <View style={homeStyles.head}>  
-                        <Image source={Header} />
-                      </View>          
+                      <Header />     
                       <View>
                         <Text style={stylez.menu}>
                           Меню
@@ -102,7 +107,7 @@ const HomeScreen = ({navigation}) => {
                         justifyContent: 'center',
                         alignSelf: 'center',
                       }} onPress={() => { navigation.navigate('Confidience') }}>
-                        <Text style={homeStyles.oferta}>
+                        <Text style={stylez.oferta}>
                           Политика конфиденциальности
                         </Text>
                       </TouchableOpacity>
@@ -110,13 +115,13 @@ const HomeScreen = ({navigation}) => {
                         justifyContent: 'center',
                         alignSelf: 'center'
                       }} onPress={() => { navigation.navigate('Oferta')}}>
-                        <Text style={homeStyles.oferta}>
+                        <Text style={stylez.oferta}>
                             Оферта 
                         </Text>
                       </TouchableOpacity>
                     </View>
                   <View style={{alignSelf: 'center'}}>
-                    <TrueShopSvg/>
+                    <TrueShop />
                   </View>
                   <View>
                       <View>

@@ -1,25 +1,44 @@
-import React from "react";
-import { View, StyleSheet, StatusBar, Text, Image, TouchableOpacity, SafeAreaView, ScrollView} from "react-native";
+import React, { useContext } from "react";
+import { View, StyleSheet, StatusBar, Text, Image, TouchableOpacity, SafeAreaView, ScrollView } from "react-native";
 import Header from './Header.png'
 import SunSvg from './Sun.svg'
 import HomeSvg from  './Home.svg'
 import SearchSvg from './Search.svg'
 import { stylesOferta } from "./stylesOferta.js";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { ThemeContext } from "../../Theme/ThemeSwitcher";
+import Footer from "../Footer/Footer";
 
-const style = StyleSheet.create ({
+
+const Oferta = ({navigation}) => {
+
+  const {theme, setTheme} = useContext(ThemeContext)
+
+  const style = StyleSheet.create ({
     container: {
-        backgroundColor: "black",
+        backgroundColor: theme == 'light' ? 'white' : 'black',
         minHeight: 100,
         display: "flex",
         flex: 1,
         width: '100%',
-        height: '100%'},
+        height: '100%'
+      },
+      text: {
+        color: theme == 'light' ? 'black' : 'white',
+        fontSize: 12,
+        fontFamily: 'Gilroy-Regular',
+        marginBottom: 25,
+        marginLeft: 16,
+        whiteSpace:'preWrap',
+        lineHeight: 16,
+      },
+      ofertaHead: {
+        fontFamily: 'Gilroy-Regular',
+        fontSize: 24,
+        marginBottom: 25,
+        marginLeft: 16,
+        color: theme == 'light' ? 'black' : 'white'
+      }
 })
-
-const Oferta = ({navigation}) => {
-
-  // const payments = ['МИР', 'VISA International', 'Mastercard Worlwide', 'JCB']
 
     return (
     <SafeAreaView style={{
@@ -30,10 +49,10 @@ const Oferta = ({navigation}) => {
     <ScrollView style={stylesOferta.scrollView}>
         <View style={style.container}>
             <Image style={stylesOferta.header} source={Header}/>
-            <Text style={stylesOferta.ofertaHead}>
+            <Text style={style.ofertaHead}>
                 Оферта
             </Text>
-                <Text style = {stylesOferta.text}>
+                <Text style = {style.text}>
                   {"\n"}СТОРОНАМИ НАСТОЯЩЕГО СОГЛАШЕНИЯ ЯВЛЯЮТСЯ:{"\n"}
                   {"\n"}Клиент — физическое лицо, имеющее намерение оформить заказ на сайте официального интернет-магазина ООО "Орион".{"\n"}
                   {"\n"}Продавец — ООО "Орион" адрес: 117218, город Москва, ул. Кржижановского, д. 15 к. 5, эт 5 пом 515а оф 2, ИНН: 7714364969, ОГРН: 515774612393{'\n'}
@@ -66,19 +85,7 @@ const Oferta = ({navigation}) => {
                   {"\n"}3.1 Товар надлежащего качества возврату и обмену не подлежит.
                 </Text>
             <View style={stylesOferta.footer}>
-              <View>
-                <TouchableOpacity style={stylesOferta.footer} onPress={() => { navigation.navigate('chooseZal')}}>
-                  <HomeSvg/>
-                </TouchableOpacity>
-              </View>
-              <View>
-                <SearchSvg/>
-              </View>
-              <View>
-                <TouchableOpacity onPress={() => { navigation.navigate('Profile')}}>
-                  <SunSvg/>
-                </TouchableOpacity>
-              </View>
+              <Footer/>
             </View>
         </View>
     </ScrollView>

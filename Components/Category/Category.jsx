@@ -1,47 +1,62 @@
-import { Text, View, Image, ScrollView, SafeAreaView, StatusBar } from 'react-native'
-import React, { Component } from 'react'
+import { Text, View, Image, ScrollView, SafeAreaView, StatusBar, useAnimatedValue } from 'react-native'
+import React, { Component, useContext } from 'react'
 import { stylesCat } from './stylesCat'
 import GoodsItem from '../pages/GoodsItem/GoodsItem'
 import Footer from '../pages/Footer/Footer'
+import { ThemeContext } from '../Theme/ThemeSwitcher'
 
-export default class Category extends Component {
- render() {
- return (
-    <SafeAreaView style={{
-        flex: 1,
-        paddingTop: StatusBar.currentHeight,
-        minHeight: 100
-    }}>
-        <ScrollView style={{
-            backgroundColor: 'black',
-            minHeight: 100
-        }}>
-            <View style={{
-                    alignItems: 'flex-start'
+
+const Category = () => {
+
+    const theme = useContext(ThemeContext)
+
+    const styles = {
+        container: {
+            flex: 1,
+            backgroundColor: theme == 'light' ? lightTheme : '#fff',
+            alignSelf: 'center',
+            justifyContent: 'center'
+          },
+        }
+
+    return (
+            <SafeAreaView style={{
+                flex: 1,
+                paddingTop: StatusBar.currentHeight,
+                minHeight: 100
+            }}>
+                <ScrollView style={{
+                    backgroundColor: theme == 'light' ? 'white' : 'black',
+                    minHeight: 100
                 }}>
-                    <Text style={[stylesCat.salats]}>
-                        Салаты
-                    </Text>
-            </View>
-            <View style = {stylesCat.container}>
-                        <View style = {stylesCat.viewIm}>            
-                        </View>
-                        <View style={{
-                            width: '90%',
-                            margin: '0 auto',
+                    <View style={{
+                            alignItems: 'flex-start',
+                            backgroundColor: theme == 'light' ? 'white' : 'black'
                         }}>
-                            <GoodsItem name={"Салат из телятины, зелёной редьки и жареного лука («Ташкент»)"} imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
-                            <GoodsItem name={"Салат из телятины, зелёной редьки и жареного лука («Ташкент»)"} imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
-                            <GoodsItem name={"Салат из телятины, зелёной редьки и жареного лука («Ташкент»)"} imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
-                            <GoodsItem name={"Салат из телятины, зелёной редьки и жареного лука («Ташкент»)"} imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
-                            <GoodsItem name={"Салат из телятины, зелёной редьки и жареного лука («Ташкент»)"} imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
-                        </View>
-                    <View style={{position: 'absolute', left: 0, right: 0, bottom: 0}}>
-                        <Footer/>
+                            <Text style={[stylesCat.salats]}>
+                                Салаты
+                            </Text>
                     </View>
-            </View>
-        </ScrollView>
-    </SafeAreaView>
- )
+                    <View style = {styles.container}>
+                                <View style = {stylesCat.viewIm}>            
+                                </View>
+                                <View style={{
+                                    width: '90%',
+                                    margin: '0 auto',
+                                }}>
+                                    <GoodsItem name={"Салат из телятины, зелёной редьки и жареного лука («Ташкент»)"} imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
+                                    <GoodsItem name={"Салат из телятины, зелёной редьки и жареного лука («Ташкент»)"} imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
+                                    <GoodsItem name={"Салат из телятины, зелёной редьки и жареного лука («Ташкент»)"} imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
+                                    <GoodsItem name={"Салат из телятины, зелёной редьки и жареного лука («Ташкент»)"} imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
+                                    <GoodsItem name={"Салат из телятины, зелёной редьки и жареного лука («Ташкент»)"} imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
+                                </View>
+                            <View style={{position: 'absolute', left: 0, right: 0, bottom: 0}}>
+                                <Footer/>
+                            </View>
+                    </View>
+                </ScrollView>
+            </SafeAreaView>
+    )
  }
-}
+
+ export default Category
