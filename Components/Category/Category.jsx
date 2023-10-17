@@ -24,17 +24,7 @@ export default class Category extends Component {
                     </Text>
             </View>
             <View style = {stylesCat.container}>
-                        <View style = {{
-                                justifyContent: 'space-between',
-                                flexDirection: 'column',
-                                marginBottom: 16,
-                                marginLeft: 10,
-                                marginRight: 15,
-                                width: '100%',
-                                marginStart: "5%",
-                                marginEnd: '10%',
-                                justifyContent: 'center',
-                        }}>            
+                        <View style = {stylesCat.viewIm}>            
                         </View>
                         <View style={{
                             width: '90%',

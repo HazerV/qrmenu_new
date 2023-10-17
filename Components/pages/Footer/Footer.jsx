@@ -1,12 +1,17 @@
-import React from "react";
+import React, {useContext} from "react";
 import { View, SafeAreaView, ScrollView, Text, StatusBar, TouchableOpacity } from "react-native";
 import HomeSvg from '../../pages/img/icons/Home.svg'
 import SearchSvg from '../../pages/img/icons/Search.svg'
 import SunSvg from '../../pages/img/icons/Sun.svg'
 import { useNavigation } from "@react-navigation/native";
+import { ThemeContext } from "../../Theme/ThemeSwitcher";
 
 const Footer = () => {
+
     const navigation = useNavigation()
+    
+    const {theme, setTheme} = useContext(ThemeContext)
+
     return (
             <SafeAreaView style = {styles.AreaView}>
                 <View style={{ flex: 1 }}>
@@ -21,14 +26,17 @@ const Footer = () => {
                                     <View>
                                         <SearchSvg/>
                                     </View>
-                                    <View>
-                                        <SunSvg/>
-                                    </View>
+                                    <TouchableOpacity onPress={() => theme == 'light' ? setTheme('dark') : setTheme('light')}> 
+                                        <View>
+                                            <SunSvg/>
+                                        </View>
+                                    </TouchableOpacity>
                                 </View>
                             </View>
                         </ScrollView>
                 </View>
-            </SafeAreaView>    
+            </SafeAreaView>
+            
     )
 }
 

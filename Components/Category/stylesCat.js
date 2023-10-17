@@ -27,5 +27,15 @@ export const stylesCat = {
         marginStart: "5%",
         marginEnd: '10%',
     },
-
+    viewIm: {
+        justifyContent: 'space-between',
+        flexDirection: 'column',
+        marginBottom: 16,
+        marginLeft: 10,
+        marginRight: 15,
+        width: '100%',
+        marginStart: "5%",
+        marginEnd: '10%',
+        justifyContent: 'center',
+}
 }
