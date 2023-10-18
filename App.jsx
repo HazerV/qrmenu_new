@@ -7,8 +7,10 @@ import AppLoading from 'expo-app-loading';
 import Confidence from './Components/pages/Confidence/conf';
 import Oferta from './Components/pages/Oferta/oferta';
 import Menu from './Components/pages/chooseZal/chooseZal.jsx';
-import Category from './Components/Category/Category';
+import Category from '../native-qrMenu-master/Components/pages/Category/Category.jsx';
 import { ThemeContextProvider } from './Components/Theme/ThemeSwitcher.jsx';
+import Cart from './Components/pages/Cart/Cart.jsx';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -65,6 +67,13 @@ const App = () => {
                 headerShown: false
               }}
             />  
+            <Stack.Screen
+              name='Cart'
+              component={Cart}
+              options={{
+                headerShown: false
+              }} 
+              />
           </Stack.Navigator>
         </NavigationContainer>
       </ThemeContextProvider>

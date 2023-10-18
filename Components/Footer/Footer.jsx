@@ -1,10 +1,17 @@
 import React, {useContext} from "react";
-import { View, SafeAreaView, ScrollView } from "react-native";
+import { View, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 import SearchSvg from '../img/icons/Search.svg'
 import GoHome from "./goHome/GoHome";
 import ThemeSwitcher from "./themeSwitcher/Themeswitcher";
+import CartFoot from "../Cart/CartFoot/CartFoot";
+import { ThemeContext } from "../Theme/ThemeSwitcher";
+import { useNavigation } from "@react-navigation/native";
+
 
 const Footer = () => {
+
+    const navigation = useNavigation()
+    const {theme} = useContext(ThemeContext)
 
     const styles = {
         container: {
@@ -13,15 +20,15 @@ const Footer = () => {
             flex: 1,
             width: '100%',
             height: '100%',
-            paddingBottom: 100,
         },
         AreaView: {
             flex: 1,
-            paddingTop: -100,
             minHeight: 100,
         },
         ScrollView: {
-            minHeight: 30
+            backgroundColor: theme == 'light' ? 'white' : 'black',
+            minHeight: 30,
+            
         },
         icons: {
             display: 'flex', 
@@ -47,6 +54,13 @@ const Footer = () => {
                             <View>
                                 <ThemeSwitcher />
                             </View>
+                            <TouchableOpacity onPress={() => { navigation.navigate('Cart')}}>
+                                <View style={{
+                                    paddingLeft: 130
+                                }}>
+                                    <CartFoot />
+                                </View>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </View>

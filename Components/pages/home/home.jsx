@@ -9,6 +9,7 @@ import { lightTheme } from './lightTheme';
 import Header from '../../Header/Header';
 import TrueShop from '../../TrueShop';
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -103,29 +104,26 @@ const HomeScreen = ({navigation}) => {
                         justifyContent: 'center',
                         alignSelf: 'center',
                       }} onPress={() => { navigation.navigate('Confidience') }}>
-                        <Text style={stylez.oferta}>
-                          Политика конфиденциальности
-                        </Text>
+                          <Text style={stylez.oferta}>
+                            Политика конфиденциальности
+                          </Text>
                       </TouchableOpacity>
                       <TouchableOpacity style={{
                         justifyContent: 'center',
                         alignSelf: 'center'
                       }} onPress={() => { navigation.navigate('Oferta')}}>
-                        <Text style={stylez.oferta}>
-                            Оферта 
-                        </Text>
+                          <Text style={stylez.oferta}>
+                              Оферта 
+                          </Text>
                       </TouchableOpacity>
                     </View>
                   <View style={{alignSelf: 'center', marginBottom: 8}}>
-                    <TrueShop />
+                      <TrueShop />
                   </View>
-                  
-
-                  
               </View>    
           </ScrollView>
-              <View>
-                    <Footer/>
+              <View style={{paddingBottom: 16}}>
+                  <Footer/>
               </View>
         </View>
     </SafeAreaView>

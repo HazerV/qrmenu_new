@@ -14,7 +14,8 @@ const Header = ( ) => {
         header: {alignSelf: 'center',
             justifyContent: 'center',  
             marginBottom: 16,
-            marginTop: -40,}
+            marginTop: -40
+        }
     }
 
     console.log('change theme', theme)
