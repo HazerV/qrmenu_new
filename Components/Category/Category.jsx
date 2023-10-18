@@ -2,7 +2,7 @@ import { Text, View, Image, ScrollView, SafeAreaView, StatusBar, useAnimatedValu
 import React, { Component, useContext } from 'react'
 import { stylesCat } from './stylesCat'
 import GoodsItem from '../pages/GoodsItem/GoodsItem'
-import Footer from '../pages/Footer/Footer'
+import Footer from '../Footer/Footer'
 import { ThemeContext } from '../Theme/ThemeSwitcher'
 
 
@@ -23,7 +23,8 @@ const Category = () => {
             <SafeAreaView style={{
                 flex: 1,
                 paddingTop: StatusBar.currentHeight,
-                minHeight: 100
+                minHeight: 100,
+                backgroundColor: theme == 'light' ? 'white' : 'black'
             }}>
                 <ScrollView style={{
                     backgroundColor: theme == 'light' ? 'white' : 'black',
@@ -38,11 +39,12 @@ const Category = () => {
                             </Text>
                     </View>
                     <View style = {styles.container}>
-                                <View style = {stylesCat.viewIm}>            
+                                <View style = {[stylesCat.viewIm, {backgroundColor: theme == 'light' ? 'white' : 'black'}]}>            
                                 </View>
                                 <View style={{
                                     width: '90%',
                                     margin: '0 auto',
+                                    backgroundColor: theme == 'light' ? 'white' : 'black'
                                 }}>
                                     <GoodsItem name={"Салат из телятины, зелёной редьки и жареного лука («Ташкент»)"} imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
                                     <GoodsItem name={"Салат из телятины, зелёной редьки и жареного лука («Ташкент»)"} imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
@@ -50,7 +52,7 @@ const Category = () => {
                                     <GoodsItem name={"Салат из телятины, зелёной редьки и жареного лука («Ташкент»)"} imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
                                     <GoodsItem name={"Салат из телятины, зелёной редьки и жареного лука («Ташкент»)"} imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
                                 </View>
-                            <View style={{position: 'absolute', left: 0, right: 0, bottom: 0}}>
+                            <View style={{position: 'absolute', left: 0, right: 0, bottom: 0, }}>
                                 <Footer/>
                             </View>
                     </View>

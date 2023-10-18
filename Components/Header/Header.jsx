@@ -1,20 +1,23 @@
 import React, { useContext } from "react";
 import { View, Text, StyleSheet, Dimensions, Platform, Image } from "react-native";
-import HeaderBlack from '../pages/img/HeaderBlack.png'
-import HeaderLight from '../pages/img/HeaderLight.png'
 import { ThemeContext } from "../Theme/ThemeSwitcher";
-import HeaderBlackSvg from '../pages/img/HeaderBlack.svg'
+import { SvgUri } from "react-native-svg";
+import HeaderBlack from '../Header/HeaderBlack.svg' 
+import HeaderLight from '../Header/HeaderLight.svg' 
+
 
 const Header = ( ) => {
 
-    const theme = useContext(ThemeContext)
+    const {theme, setTheme} = useContext(ThemeContext)
 
     const style = {
         header: {alignSelf: 'center',
             justifyContent: 'center',  
             marginBottom: 16,
-            marginTop: -40}
+            marginTop: -40,}
     }
+
+    console.log('change theme', theme)
 
     if (theme == 'dark') {
         return (
@@ -24,7 +27,7 @@ const Header = ( ) => {
     } else {
         return (
         <View style={style.header}>
-            <Image source={HeaderLight} />
+            <HeaderLight />
         </View> )
     }
 }
