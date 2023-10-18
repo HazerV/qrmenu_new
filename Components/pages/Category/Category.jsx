@@ -35,12 +35,13 @@ const Category = () => {
                                 <View style = {[{       
                                      justifyContent: 'space-between',
                                      flexDirection: 'column',
-                                     marginLeft: 10,
-                                     marginRight: 15,
-                                     width: '100%',
-                                     marginStart: "5%",
-                                     marginEnd: '10%',
-                                     justifyContent: 'center',}, {
+                                    //  marginLeft: 10,
+                                    //  marginRight: 15,
+                                    //  width: '100%',
+                                    //  marginStart: "5%",
+                                    //  marginEnd: '10%',
+                                     justifyContent: 'center',}, 
+                                     {
                                         backgroundColor: theme == 'light' ? 'white' : 'black'
                                             }]}>            
                                 </View>

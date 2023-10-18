@@ -8,7 +8,7 @@ import { ThemeContext } from '../../Theme/ThemeSwitcher';
 import { lightTheme } from './lightTheme';
 import Header from '../../Header/Header';
 import TrueShop from '../../TrueShop';
-
+import GoodsItem from ''
 
 const styles = StyleSheet.create({
   container: {
@@ -66,14 +66,15 @@ const HomeScreen = ({navigation}) => {
       textDecorationLine: 'underline', 
       height: 22, 
       fontFamily: 'Gilroy-Regular', 
-      marginBottom: 6}
+      marginBottom: 6
+    }
   })
 
 
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{flex: 1}}>
+        <View style={{flex: 1}}>
           <ScrollView style={styles.scrollView}>
             <StatusBar backgroundColor='black' animated={true} />
               <View style={stylez.container}>
