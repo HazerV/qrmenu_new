@@ -8,7 +8,6 @@ import { ThemeContext } from '../../Theme/ThemeSwitcher';
 import { lightTheme } from './lightTheme';
 import Header from '../../Header/Header';
 import TrueShop from '../../TrueShop';
-import GoodsItem from ''
 
 const styles = StyleSheet.create({
   container: {
