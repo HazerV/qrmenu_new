@@ -8,6 +8,8 @@ import { ThemeContext } from '../../Theme/ThemeSwitcher';
 import { lightTheme } from './lightTheme';
 import Header from '../../Header/Header';
 import TrueShop from '../../TrueShop';
+import GoodsItem from '../GoodsItem/GoodsItem';
+import { Dimensions } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -27,7 +29,8 @@ const HomeScreen = ({navigation}) => {
 
   const stylez = StyleSheet.create({
     container: {
-      flex: 1,
+      height: Dimensions.get('window').height,
+      width: Dimensions.get('window').width,
       backgroundColor: theme == 'light' ? lightTheme : '#fff',
       alignSelf: 'center',
       justifyContent: 'center'

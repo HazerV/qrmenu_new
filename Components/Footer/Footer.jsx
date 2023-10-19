@@ -1,11 +1,13 @@
 import React, {useContext} from "react";
 import { View, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity } from "react-native";
-import SearchSvg from '../img/icons/Search.svg'
+import SearchSvgB from '../img/icons/Search.svg'
 import GoHome from "./goHome/GoHome";
 import ThemeSwitcher from "./themeSwitcher/Themeswitcher";
 import CartFoot from "../Cart/CartFoot/CartFoot";
 import { ThemeContext } from "../Theme/ThemeSwitcher";
 import { useNavigation } from "@react-navigation/native";
+import { Dimensions } from "react-native";
+import SearchSvgW from '../Footer/Search.svg'
 
 
 const Footer = () => {
@@ -17,18 +19,16 @@ const Footer = () => {
         container: {
             minHeight: 100,
             display: "flex",
-            flex: 1,
-            width: '100%',
-            height: '100%',
+            width: Dimensions.get('window').width
         },
         AreaView: {
-            flex: 1,
+            // flex: 1,
             minHeight: 100,
         },
         ScrollView: {
-            backgroundColor: theme == 'light' ? 'white' : 'black',
+            // backgroundColor: theme == 'light' ? 'white' : 'black',
             minHeight: 30,
-            
+            // flex: 1
         },
         icons: {
             display: 'flex', 
@@ -38,6 +38,30 @@ const Footer = () => {
             position: 'absolute', left: 0, right: 0, bottom: 0,
         }
     }
+
+    const Search = () => {
+        if (theme == 'dark') {
+            return (
+                <View>
+                    <SearchSvgB />
+                </View>
+                ) 
+        } else {
+            return (
+                <View style={{
+                    width: 48,
+                    height: 48,
+                    borderColor: 'GrayLight',
+                    borderRadius: 2
+                }}>
+                    <View>
+                        <SearchSvgW />
+                    </View>
+                </View>
+            )
+        }
+    }
+
 
     return (
         <ScrollView style={styles.ScrollView}>
@@ -49,14 +73,14 @@ const Footer = () => {
                                 <GoHome />
                             </View>
                             <View>
-                                <SearchSvg/>
+                                <Search />
                             </View>
                             <View>
                                 <ThemeSwitcher />
                             </View>
                             <TouchableOpacity onPress={() => { navigation.navigate('Cart')}}>
                                 <View style={{
-                                    paddingLeft: 130
+                                    paddingLeft: 110
                                 }}>
                                     <CartFoot />
                                 </View>

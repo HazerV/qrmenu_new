@@ -43,21 +43,21 @@ const Cart = () => {
                     width: '100%',
                     height: '100%'
                 }}>
-                    <View style={styles.container}>
-                        <Text style={styles.headText}>
+                    <View style={styles.container}>             
+                        <Text style={styles.headText}>          {/*  HEADER  */}
                             Корзина
                         </Text>
-                        <Text style={styles.headMini}>Итого на 4 400 руб</Text>
+                        <Text style={styles.headMini}>Итого на 4 400 руб</Text>       {/*  COUNT SUN UNDER HEAD  */}
                     </View>
                     <View style={{
                         width: '100%',
                         backgroundColor: theme == 'light' ? 'white' : 'black',
                         paddingBottom: 100
                     }}>
-                        <GoodsItem name='Салааат' imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
+                        <GoodsItem name='Салааат'/>                  {/*  ITEM IN CART  */}
                     </View>
                 </SafeAreaView>
-            </ScrollView>
+            </ScrollView>                                       
         );
 }
 

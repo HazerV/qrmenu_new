@@ -1,22 +1,25 @@
 import { Text, View, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
 import Counter from './Counter'
+import { ReactNativeZoomableView } from '@openspacelabs/react-native-zoomable-view'
 
-const GoodsItem = ({ name, imagePath }) => {
+const GoodsItem = ({name, imagePath}) => {
 
     return ( 
 
         <View style={styles.container}>
             <View style={styles.view1}>
                 <View style={styles.view2}>
-                    <TouchableOpacity/>
+                    <TouchableOpacity />
                         <Text style={styles.text}>
                             {name}
                         </Text>
                     <TouchableOpacity/>
                     <Counter/>
-                </View>
-                    <Image style={styles.image} source={{ uri: imagePath }} />
+                </View> 
+                    <View>
+                        <Image style={styles.image} source={{ uri: imagePath }} />
+                    </View>
             </View>
         </View> 
 
@@ -49,6 +52,7 @@ const styles = {
         marginLeft: 16,
         marginTop: 16,
         marginRight: 16,
+        width: '80%',
     },
     container: {
         width: '100%',
@@ -57,7 +61,8 @@ const styles = {
         minHeight: 144,
         marginBottom: 16,
         borderColor: 'gray',
-        borderWidth: 2
+        borderWidth: 2,
+        width: '90%',
     }
 }
 

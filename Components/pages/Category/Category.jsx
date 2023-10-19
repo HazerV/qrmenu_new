@@ -1,4 +1,4 @@
-import { Text, View, Image, ScrollView, SafeAreaView, StatusBar, useAnimatedValue } from 'react-native'
+import { Text, View, Dimensions, ScrollView, SafeAreaView, StatusBar, useAnimatedValue, useWindowDimensions } from 'react-native'
 import React, { useContext } from 'react'
 import stylesCat from '../Category/stylesCat'
 import GoodsItem from '../GoodsItem/GoodsItem'
@@ -6,63 +6,66 @@ import Footer from '../../Footer/Footer'
 import { ThemeContext } from '../../Theme/ThemeSwitcher'
 
 
+
 const Category = () => {
 
-    const theme = useContext(ThemeContext)
+    const {theme} = useContext(ThemeContext)
 
     const styles = {
-        container: {
-            flex: 1,
-            backgroundColor: theme == 'light' ? lightTheme : '#fff',
-            alignSelf: 'center',
-            justifyContent: 'center'
-          },
+            container: {
+                backgroundColor: theme == 'light' ? 'black' : 'white',
+                width: '100%',
+                minHeight: useWindowDimensions().height
+            },
+            headName: {
+                paddingTop: 32,
+                paddingLeft: 16,
+                paddingBottom: 16
+            },
+            nameStyle: {
+                color: theme == 'dark' ? 'black' : 'white', 
+                fontFamily: 'Gilroy-Regular',
+                fontSize: 24
+            },
+            items: {
+                justifyContent: 'flex-start',
+                alignItems: 'flex-start',
+                paddingLeft: 16,
+                width: useWindowDimensions().width
+            }
         }
 
-    return (
-            <SafeAreaView style={{
-                flex: 1,
-                paddingTop: StatusBar.currentHeight,
-                minHeight: 100,
-                // backgroundColor: theme == 'light' ? 'white' : 'black'
-            }}>
-                <ScrollView style={{
-                    backgroundColor: theme == 'light' ? 'white' : 'black',
-                    minHeight: 100
-                }}>
+    const catName = 'Салаты'
 
-                    <View style = {styles.container}>
-                                <View style = {[{       
-                                     justifyContent: 'space-between',
-                                     flexDirection: 'column',
-                                    //  marginLeft: 10,
-                                    //  marginRight: 15,
-                                    //  width: '100%',
-                                    //  marginStart: "5%",
-                                    //  marginEnd: '10%',
-                                     justifyContent: 'center',}, 
-                                     {
-                                        backgroundColor: theme == 'light' ? 'white' : 'black'
-                                            }]}>            
+
+    return (
+            <View style={{
+                flex: 1
+            }}>
+                <SafeAreaView>
+                     <ScrollView style={{}}>
+                         <View style={styles.container}>
+                             <View style = {styles.headName}>
+                                 <Text style={styles.nameStyle}>
+                                     {catName}
+                                 </Text>
+                             </View>
+
+                             <View style={styles.items}>
+                                 <GoodsItem name={'Salat salat salat'} imagePath={'https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg'} />
+                                 <GoodsItem name={'Salat salat salat'} imagePath={'https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg'} />
+                                 <GoodsItem name={'Salat salat salat'} imagePath={'https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg'} />
+                                 <GoodsItem name={'Salat salat salat'} imagePath={'https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg'} />
+                                 <GoodsItem name={'Salat salat salat'} imagePath={'https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg'} />
+                             </View>
+                             
+                                <View>
+                                    <Footer />
                                 </View>
-                                <View style={{
-                                    width: '100%',
-                                    // margin: '0 auto',
-                                    backgroundColor: theme == 'light' ? 'white' : 'black',
-                                    paddingBottom: 100,
-                                }}>
-                                    <GoodsItem name={"Салат из телятины, зелёной редьки и жареного лука («Ташкент»)"} imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
-                                    <GoodsItem name={"Салат из телятины, зелёной редьки и жареного лука («Ташкент»)"} imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
-                                    <GoodsItem name={"Салат из телятины, зелёной редьки и жареного лука («Ташкент»)"} imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
-                                    <GoodsItem name={"Салат из телятины, зелёной редьки и жареного лука («Ташкент»)"} imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
-                                    <GoodsItem name={"Салат из телятины, зелёной редьки и жареного лука («Ташкент»)"} imagePath={"https://api.menu.true-false.ru/storage/photos/zmcdR90pburp3Ywexh6yY77Ol4McLNrccYaWuA1X_2x.jpg"}/>
-                                </View>
-                            <View style={{position: 'absolute', left: 0, right: 0, bottom: 0, marginLeft: 0 }}>
-                                <Footer/>
-                            </View>
-                    </View>
-                </ScrollView>
-            </SafeAreaView>
+                         </View>
+                     </ScrollView>
+                </SafeAreaView>
+            </View>
     )
  }
 
