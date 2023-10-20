@@ -1,7 +1,5 @@
-import { useContext, createContext } from "react";
-import { View } from "react-native";
+import React from "react";
 
+const CartContext = React.createContext()
 
-const cartContext = createContext({
-    
-})
+export default CartContext

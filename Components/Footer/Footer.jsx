@@ -3,7 +3,7 @@ import { View, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity } from "re
 import SearchSvgB from '../img/icons/Search.svg'
 import GoHome from "./goHome/GoHome";
 import ThemeSwitcher from "./themeSwitcher/Themeswitcher";
-import CartFoot from "../Cart/CartFoot/CartFoot";
+import CartFoot from "../pages/Cart/CartFoot";
 import { ThemeContext } from "../Theme/ThemeSwitcher";
 import { useNavigation } from "@react-navigation/native";
 import { Dimensions } from "react-native";
@@ -17,18 +17,13 @@ const Footer = () => {
 
     const styles = {
         container: {
-            minHeight: 100,
-            display: "flex",
             width: Dimensions.get('window').width
         },
         AreaView: {
-            // flex: 1,
             minHeight: 100,
         },
         ScrollView: {
-            // backgroundColor: theme == 'light' ? 'white' : 'black',
             minHeight: 30,
-            // flex: 1
         },
         icons: {
             display: 'flex', 
@@ -64,8 +59,6 @@ const Footer = () => {
 
 
     return (
-        <ScrollView style={styles.ScrollView}>
-            <SafeAreaView style = {styles.AreaView}>
                 <View>
                     <View style = {styles.container}>
                         <View style={[styles.icons, {marginTop: 16}]}>
@@ -80,7 +73,7 @@ const Footer = () => {
                             </View>
                             <TouchableOpacity onPress={() => { navigation.navigate('Cart')}}>
                                 <View style={{
-                                    paddingLeft: 110
+                                    paddingLeft: 100
                                 }}>
                                     <CartFoot />
                                 </View>
@@ -88,9 +81,6 @@ const Footer = () => {
                         </View>
                     </View>
                 </View>
-            </SafeAreaView>
-        </ScrollView>
-            
     )
 
 

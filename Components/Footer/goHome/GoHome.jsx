@@ -13,13 +13,13 @@ const GoHome = () => {
 
     if (theme == 'dark') {
         return (
-            <TouchableOpacity onPress={() => { navigation.navigate('chooseZal')}}>
+            <TouchableOpacity onPress={() => { navigation.navigate('Home')}}>
                 <HomeB />
             </TouchableOpacity>
         )
     } else {
         return (
-            <TouchableOpacity onPress={() => { navigation.navigate('chooseZal')}}>
+            <TouchableOpacity onPress={() => { navigation.navigate('Home')}}>
                 <HomeW />
             </TouchableOpacity>
         )

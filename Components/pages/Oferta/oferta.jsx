@@ -84,11 +84,12 @@ const Oferta = ({navigation}) => {
                     3. ВОЗВРАТ ТОВАРА{"\n"}
                     {"\n"}3.1 Товар надлежащего качества возврату и обмену не подлежит.
                   </Text>
-              <View style={stylesOferta.footer}>
-                <Footer/>
-              </View>
+              
           </View>
       </ScrollView>
+      <View style={stylesOferta.footer}>
+                <Footer/>
+              </View>
     </SafeAreaView>
     
     )

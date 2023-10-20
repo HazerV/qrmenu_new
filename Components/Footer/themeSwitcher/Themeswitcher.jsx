@@ -15,7 +15,7 @@ const ThemeSwitcher = () => {
                     <SunSvg />
                 </View>
             </TouchableOpacity> 
-                ) 
+                )                           
         } else {
             return (
             <TouchableOpacity onPress={() => theme == 'light' ? setTheme('dark') : setTheme('light')}>
@@ -23,11 +23,8 @@ const ThemeSwitcher = () => {
                     <SunSvgW />
                 </View>
             </TouchableOpacity>
-                 )
+            )
         }
     }
-
-
-const styles = StyleSheet.create({})
 
 export default ThemeSwitcher;

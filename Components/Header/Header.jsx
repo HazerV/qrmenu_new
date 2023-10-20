@@ -8,26 +8,28 @@ import HeaderLight from '../Header/HeaderLight.svg'
 
 const Header = ( ) => {
 
-    const {theme, setTheme} = useContext(ThemeContext)
+    const {theme} = useContext(ThemeContext)
 
     const style = {
-        header: {alignSelf: 'center',
+        header: {
+            alignSelf: 'center',
             justifyContent: 'center',  
-            marginBottom: 16,
-            marginTop: -40
+            // marginBottom: 16,
+            // marginTop: -40,
+            paddingLeft: 25
         }
     }
 
-    console.log('change theme', theme)
+    console.log(theme)
 
-    if (theme == 'dark') {
+    if (theme === 'dark') {
         return (
-        <View stlye={style.header}>
+        <View stlye={[style.header, {paddingLeft: 25}]}>
             <HeaderBlack />
         </View> ) 
     } else {
         return (
-        <View style={style.header}>
+        <View stlye={[style.header, {paddingLeft: 25}]}>
             <HeaderLight />
         </View> )
     }

@@ -1,30 +1,32 @@
-export const lightTheme = {
+export const darkTheme = {
     container: {
-      flex: 1,
-      backgroundColor: 'white'
+        // height: Dimensions.get('window').height,
+        // width: Dimensions.get('window').width,
+        // flex: 1,
+        backgroundColor: 'black'
       },
       attention: {
         textAlign: 'justify',
-        color: 'black',
-        width: '85%',
+        color: 'white',
+        width: '90%',
         alignSelf: 'center',
         fontFamily: 'Gilroy-Regular',
         fontSize: 14,
         width: '100%',
         textAlign: 'justify',
-        paddingLeft: 38,
+        paddingLeft: 32,
         paddingTop: 16,
       },
       menu: {
         fontFamily: 'Gilroy-Regular',
         fontSize: 24,
-        color: "black",
+        color: "white",
         paddingLeft: 42,
         paddingBottom: 16
       },
       oferta: {
-        paddingLeft: 32, 
-        color: 'black', 
+        paddingLeft: 32,  
+        color: 'white', 
         textDecorationLine: 'underline', 
         height: 22, 
         fontFamily: 'Gilroy-Regular', 
@@ -43,3 +45,5 @@ export const lightTheme = {
         marginEnd: '10%',
     },
     }
+
+    

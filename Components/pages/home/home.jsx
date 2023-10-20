@@ -1,6 +1,5 @@
 import React, {useContext} from 'react';
-import {View, Image, StyleSheet, Text, StatusBar, ScrollView, SafeAreaView, TouchableOpacity } from 'react-native';
-import { homeStyles } from './homeStyle';
+import {View, Image, Dimensions, StyleSheet, Text, StatusBar, ScrollView, SafeAreaView, TouchableOpacity } from 'react-native';
 import Brusket from '../../img/Bruskett.png'
 import Desert from '../../img/Desert.png'
 import Footer from '../../Footer/Footer';
@@ -9,7 +8,8 @@ import { lightTheme } from './lightTheme';
 import Header from '../../Header/Header';
 import TrueShop from '../../TrueShop';
 import GoodsItem from '../GoodsItem/GoodsItem';
-import { Dimensions } from 'react-native';
+import { darkTheme } from './darkTheme';
+import { useWindowDimensions } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -25,117 +25,76 @@ const styles = StyleSheet.create({
 
 const HomeScreen = ({navigation}) => {
 
-  const {theme} = useContext(ThemeContext)
+  const {theme} = useContext(ThemeContext)  
+  const windowWidth = Dimensions.get('window').width
+  const windowHeight = Dimensions.get('window').height
 
-  const stylez = StyleSheet.create({
+  const styles = StyleSheet.create({
     container: {
-      height: Dimensions.get('window').height,
-      width: Dimensions.get('window').width,
-      backgroundColor: theme == 'light' ? lightTheme : '#fff',
-      alignSelf: 'center',
-      justifyContent: 'center'
+      width: windowWidth > 600 ? '60%' : '90%',
+      height: windowHeight > 600 ? '60%' : '90%',
+      flex: 1
     },
-    container: {
-      backgroundColor: theme == "light" ? 'white' : 'black',
-      minHeight: 100,
-      display: "flex",
-      flex: 1,
-      width: '100%',
-      height: '100%',
-      paddingBottom: 100
-    },
-    attention: {
-      textAlign: 'justify',
-      color: theme == 'light' ? 'black' : 'white',
-      fontSize: 14,
-      fontFamily: "Gilroy-Regular",
-      alignSelf: 'center',
-      marginLeft: 10,
-      marginRight: 15,
-      marginBottom: 52,
-      width: '90%'
-    },
-    menu: {
-      textAlign: 'left',
-      color: theme == 'light' ? 'black' : "white",
-      fontSize: 24,
-      fontFamily: "Gilroy-Regular",
-      marginBottom: 25,
-      marginLeft:16 
-    },
-    oferta: {
-      color: theme == 'light' ? 'black' : 'white', 
-      textDecorationLine: 'underline', 
-      height: 22, 
-      fontFamily: 'Gilroy-Regular', 
-      marginBottom: 6
+    text: {
+      fontSize: windowWidth > 500 ? 50 : 24
     }
   })
-
-
+  const stylesThemes = StyleSheet.create(theme === 'dark' ? darkTheme : lightTheme)
 
   return (
-    <SafeAreaView style={styles.container}>
-        <View style={{flex: 1}}>
-          <ScrollView style={styles.scrollView}>
-            <StatusBar backgroundColor='black' animated={true} />
-              <View style={stylez.container}>
-                  <View>
-                      <Header />     
-                      <View>
-                        <Text style={stylez.menu}>
-                          Меню
-                        </Text>
-                      </View>
-                      <TouchableOpacity onPress={() => { navigation.navigate('Category') }}>
-                        <View style={homeStyles.buttons}>
-                          <Image source={Desert} />
-                          <Image source={Brusket} />
+    <SafeAreaView style={{
+      backgroundColor: theme == 'dark' ? "black" : 'white',
+      height: '100%'
+    }}>
+      <ScrollView>
+        <View style={styles.container}> 
+          <Header />
+            <View>
+                <Text style={stylesThemes.menu}>
+                    Меню
+                </Text>
+            </View>
+                <TouchableOpacity onPress={() => { navigation.navigate('Category') }}>
+                        <View style={{
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          flexDirection: 'row',
+                          columnGap: 16,
+                          width: Dimensions.get('window').width
+                        }} >
+                            <Image source={Desert} />
+                            <Image source={Brusket} />
                         </View>
-                      </TouchableOpacity>
-                        <Text style={ stylez.attention }>
-                          Уважаемые гости, если у Вас есть аллергия на какой-либо продукт, 
-                          пожалуйста, предупредите об этом Вашего официанта. 
-                          Меню является рекламной продукцией нашего ресторана. 
-                          Утвержденное контрольное меню с выходам
-                          и блюд и сведениями о пищевой ценности готовой продукции: 
-                          калорийности, содержании белков, 
-                          жиров, углеводов находится в уголке потребителя 
-                          и предоставляется по первому Вашему требованию.
+                </TouchableOpacity>
+                <Text style = {stylesThemes.attention}>
+                    Уважаемые гости, если у Вас есть аллергия на какой-либо продукт, 
+                    пожалуйста, предупредите об этом Вашего официанта. 
+                    Меню является рекламной продукцией нашего ресторана. 
+                    Утвержденное контрольное меню с выходами блюд и сведениями 
+                    о пищевой ценности готовой продукции: калорийности, 
+                    содержании белков, жиров, углеводов находится в уголке потребителя 
+                    и предоставляется по первому Вашему требованию.
+                </Text>
+                  <View style={{paddingTop: 32}}>
+                    <TouchableOpacity onPress={() => { navigation.navigate('Oferta')}}>
+                    <Text style={stylesThemes.oferta}>
+                      Политика конфиденциальности
+                    </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => { navigation.navigate('Oferta') }}>
+                      <Text style = {stylesThemes.oferta}>
+                        Оферта
                       </Text>
-                      <TouchableOpacity style={{
-                        justifyContent: 'center',
-                        alignSelf: 'center',
-                      }} onPress={() => { navigation.navigate('Confidience') }}>
-                          <Text style={stylez.oferta}>
-                            Политика конфиденциальности
-                          </Text>
-                      </TouchableOpacity>
-                      <TouchableOpacity style={{
-                        justifyContent: 'center',
-                        alignSelf: 'center'
-                      }} onPress={() => { navigation.navigate('Oferta')}}>
-                          <Text style={stylez.oferta}>
-                              Оферта 
-                          </Text>
-                      </TouchableOpacity>
-                    </View>
-                  <View style={{alignSelf: 'center', marginBottom: 8}}>
-                      <TrueShop />
+                    </TouchableOpacity>
                   </View>
-              </View>    
+            </View>
           </ScrollView>
-              <View style={{paddingBottom: 16}}>
-                  <Footer/>
-              </View>
-        </View>
-    </SafeAreaView>
+          <View style={{paddingLeft: 16}}>
+              <Footer />
+          </View>
+      </SafeAreaView>
+    
+  )
+}
 
-
-
-  );
-  
-};
-
-
-export default HomeScreen;
+  export default HomeScreen;

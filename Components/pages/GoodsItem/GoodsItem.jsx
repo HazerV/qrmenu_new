@@ -1,9 +1,16 @@
 import { Text, View, Image, TouchableOpacity } from 'react-native'
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import Counter from './Counter'
 import { ReactNativeZoomableView } from '@openspacelabs/react-native-zoomable-view'
+import CartContext from '../Cart/CartContext'
 
 const GoodsItem = ({name, imagePath}) => {
+
+    // const {dispatch} = useContext(CartContext)
+
+    // const addToCart = () => {
+    //     dispatch ({ type: 'ADD_TO_CART', payload: { id: 1, name: 'piska'}})
+    // }
 
     return ( 
 
