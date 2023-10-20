@@ -20,7 +20,8 @@ const Counter = () => {
                         </View>
                     </TouchableOpacity>
                      <Text style = {styles.text}>
-                         {count ? num * count : num} 
+                        {num}
+                         {/* {count ? num * count : num}   */}
                      </Text>
                     <TouchableOpacity onPress={() => setCount(count+1)}>
                          <View>

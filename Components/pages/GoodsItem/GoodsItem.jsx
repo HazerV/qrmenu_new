@@ -6,14 +6,7 @@ import CartContext from '../Cart/CartContext'
 
 const GoodsItem = ({name, imagePath}) => {
 
-    // const {dispatch} = useContext(CartContext)
-
-    // const addToCart = () => {
-    //     dispatch ({ type: 'ADD_TO_CART', payload: { id: 1, name: 'piska'}})
-    // }
-
     return ( 
-
         <View style={styles.container}>
             <View style={styles.view1}>
                 <View style={styles.view2}>
@@ -29,7 +22,6 @@ const GoodsItem = ({name, imagePath}) => {
                     </View>
             </View>
         </View> 
-
     );
 }
 

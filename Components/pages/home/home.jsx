@@ -47,8 +47,13 @@ const HomeScreen = ({navigation}) => {
       height: '100%'
     }}>
       <ScrollView>
-        <View style={styles.container}> 
-          <Header />
+        <View style={styles.container}>
+          <View style={{
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}> 
+            <Header />
+          </View>
             <View>
                 <Text style={stylesThemes.menu}>
                     Меню
