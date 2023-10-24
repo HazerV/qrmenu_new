@@ -10,6 +10,7 @@ import TrueShop from '../../TrueShop';
 import GoodsItem from '../GoodsItem/GoodsItem';
 import { darkTheme } from './darkTheme';
 import { useWindowDimensions } from 'react-native';
+import { CartProvider } from '../Cart/CartContext';
 
 const styles = StyleSheet.create({
   container: {
@@ -32,14 +33,15 @@ const HomeScreen = ({navigation}) => {
   const styles = StyleSheet.create({
     container: {
       width: windowWidth > 600 ? '60%' : '90%',
-      height: windowHeight > 600 ? '60%' : '90%',
+      height: windowHeight > 700 ? '80%' : '90%',
       flex: 1
     },
     text: {
-      fontSize: windowWidth > 500 ? 50 : 24
+      fontSize: windowWidth > 500 ? 24 : 14
     }
   })
   const stylesThemes = StyleSheet.create(theme === 'dark' ? darkTheme : lightTheme)
+
 
   return (
     <SafeAreaView style={{
@@ -91,6 +93,9 @@ const HomeScreen = ({navigation}) => {
                         Оферта
                       </Text>
                     </TouchableOpacity>
+                      <View style={{paddingLeft: 32, marginBottom: 50}}>
+                        <TrueShop />
+                      </View>
                   </View>
             </View>
           </ScrollView>

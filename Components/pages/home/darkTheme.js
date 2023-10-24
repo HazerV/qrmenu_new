@@ -1,20 +1,17 @@
 export const darkTheme = {
     container: {
-        // height: Dimensions.get('window').height,
-        // width: Dimensions.get('window').width,
-        // flex: 1,
         backgroundColor: 'black'
       },
       attention: {
         textAlign: 'justify',
         color: 'white',
-        width: '90%',
+        width: '85%',
         alignSelf: 'center',
         fontFamily: 'Gilroy-Regular',
         fontSize: 14,
         width: '100%',
         textAlign: 'justify',
-        paddingLeft: 32,
+        paddingLeft: 38,
         paddingTop: 16,
       },
       menu: {

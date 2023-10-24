@@ -2,7 +2,7 @@ export const stylesOferta = {
 
     scrollView: {
         backgroundColor: "black",
-        minHeight: 100
+        minHeight: 100,
     },
     container: {
         backgroundColor: "black",

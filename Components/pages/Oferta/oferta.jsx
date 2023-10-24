@@ -44,18 +44,22 @@ const Oferta = ({navigation}) => {
     <SafeAreaView style={{
         flex: 1,
         paddingTop: StatusBar.currentHeight,
-        minHeight: 100
+        minHeight: 100,
+        height: '100%',
+        width: '100%'
     }}>
       <ScrollView style={stylesOferta.scrollView}>
           <View style={style.container}>
-              <Header />
+              <View style={{alignSelf: 'center'}}>
+                <Header />
+              </View>
               <Text style={style.ofertaHead}>
                   Оферта
               </Text>
                   <Text style = {style.text}>
                     {"\n"}СТОРОНАМИ НАСТОЯЩЕГО СОГЛАШЕНИЯ ЯВЛЯЮТСЯ:{"\n"}
                     {"\n"}Клиент — физическое лицо, имеющее намерение оформить заказ на сайте официального интернет-магазина ООО "Орион".{"\n"}
-                    {"\n"}Продавец — ООО "Орион" адрес: 117218, город Москва, ул. Кржижановского, д. 15 к. 5, эт 5 пом 515а оф 2, ИНН: 7714364969, ОГРН: 515774612393{'\n'}
+                    {"\n"}Продавец — ООО "Орион" адрес: 117218, город Москва, ул. Крижановского, д. 15 к. 5, эт 5 пом 515а оф 2, ИНН: 7714364969, ОГРН: 515774612393{'\n'}
                     {"\n"}1. ОБЩИЕ ПОЛОЖЕНИЯ.{"\n"}
                     {"\n"}1.1 Информация о Товарах, размещаемых на сайте zaryadye.ginza.ru предоставляется Продавцом, если иное прямо не указано в информации о Товаре. {"\n"}
                     {"\n"}1.2 Заказывая товары через Cайт, Клиент соглашается с Условиями продажи товаров Продавца (далее — Условия), изложенными ниже. {"\n"}
@@ -87,7 +91,7 @@ const Oferta = ({navigation}) => {
               
           </View>
       </ScrollView>
-      <View style={stylesOferta.footer}>
+              <View style={stylesOferta.footer}>
                 <Footer/>
               </View>
     </SafeAreaView>

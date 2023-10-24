@@ -1,10 +1,11 @@
 import { Text, View, Image, TouchableOpacity } from 'react-native'
 import React, {useContext, useState} from 'react'
 import Counter from './Counter'
-import { ReactNativeZoomableView } from '@openspacelabs/react-native-zoomable-view'
-import CartContext from '../Cart/CartContext'
+import { CartContext } from '../Cart/CartContext'
 
-const GoodsItem = ({name, imagePath}) => {
+
+
+const GoodsItem = ({id, name, imagePath}) => {
 
     return ( 
         <View style={styles.container}>
